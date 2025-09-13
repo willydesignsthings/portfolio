@@ -45,16 +45,16 @@
       z-index: 1000;
     }
 
-    .navbar .logo img {
-      height: 40px;
-      width: auto;
-    }
-
     .logo-link {
       display: flex;
       align-items: center;
       position: relative;
       text-decoration: none;
+    }
+
+    .logo-link img {
+      height: 40px;
+      width: auto;
     }
 
     .logo-text {
@@ -73,23 +73,82 @@
       transform: translateX(0);
     }
 
-    .navbar ul {
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
       display: flex;
       list-style: none;
       gap: 2rem;
       margin: 0;
       padding: 0;
+      transition: max-height 0.3s ease-out;
     }
 
-    .navbar a {
+    nav ul li a {
       text-decoration: none;
-      color: #0014ff;
+      color: #0014FF;
       font-weight: 500;
     }
 
-    .navbar a.active {
+    nav ul li a.active {
       font-weight: 700;
     }
+
+/* --------------------------- */
+/* Hamburger Menu (Mobile) */
+/* --------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #0014FF;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #f0f0f0;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    display: none;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
 
     /* Work Section */
     .work-page {
@@ -134,39 +193,28 @@
       transform: translateY(-5px);
     }
 
-    /* Cover overlay (default) */
-/* Cover overlay (default) */
-.work-tile::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease;
-  z-index: 2;
-}
+    /* Cover overlay */
+    .work-tile::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+      z-index: 2;
+    }
 
-/* Slide upward on hover */
-.work-tile:hover::before {
-  transform: translateY(-100%);
-}
+    .work-tile:hover::before {
+      transform: translateY(-100%);
+    }
 
-/* Assign unique cover images */
-.cover1::before { background: url("images/cover1.jpg") center/cover no-repeat; }
-.cover2::before { background: url("images/cover2.jpg") center/cover no-repeat; }
-.cover3::before { background: url("images/cover3.jpg") center/cover no-repeat; }
-.cover4::before { background: url("images/cover4.jpg") center/cover no-repeat; }
-.cover5::before { background: url("images/cover5.jpg") center/cover no-repeat; }
-
-    /* Assign unique cover images */
     .cover1::before { background: url("images/cover1.jpg") center/cover no-repeat; }
     .cover2::before { background: url("images/cover2.jpg") center/cover no-repeat; }
     .cover3::before { background: url("images/cover3.jpg") center/cover no-repeat; }
     .cover4::before { background: url("images/cover4.jpg") center/cover no-repeat; }
     .cover5::before { background: url("images/cover5.jpg") center/cover no-repeat; }
 
-    /* White bar at bottom (hidden until hover) */
     .tile-content {
       position: absolute;
       bottom: 0;
@@ -195,15 +243,9 @@
       font-size: 14px;
     }
 
-    /* Asymmetry */
-    .wide {
-      grid-column: span 2;
-    }
-    .tall {
-      grid-row: span 2;
-    }
+    .wide { grid-column: span 2; }
+    .tall { grid-row: span 2; }
 
-    /* Flower Tile */
     .flower-tile {
       display: flex;
       align-items: center;
@@ -223,13 +265,11 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Contact */
     .contact {
       text-align: left;
       padding: 2rem 1rem;
     }
 
-    /* Footer */
     footer {
       text-align: left;
       padding: 1rem;
@@ -238,7 +278,6 @@
       color: #0014ff;
     }
 
-    /* Buttons */
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -255,9 +294,29 @@
       color: white;
     }
 
-    /* Cursor */
     body, a, button, .tile, input, textarea {
       cursor: url('images/cursor-click.png') 16 16, auto;
+    }
+
+    @media (max-width: 768px) {
+      .work-page h1 {
+        font-size: 28px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      footer {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .work-page h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -272,7 +331,12 @@
       </a>
     </div>
     <nav>
-      <ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="work.html" class="active">Work</a></li>
@@ -310,7 +374,6 @@
         </div>
       </a>
 
-      <!-- Spinning Flower Filler -->
       <div class="flower-tile">
         <img src="images/Flower-logo-with-type.png" alt="Spinning Flower Logo">
       </div>
@@ -345,6 +408,17 @@
     <p>Aiden Williams is a Graphic Designer based in Niagara Falls, Ontario.</p>
     <p>Email: <a href="mailto:aidenwilliams7@gmail.com">aidenwilliams7@gmail.com</a></p>
   </footer>
+
+  <!-- Hamburger Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

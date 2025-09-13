@@ -7,19 +7,26 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
   <!-- Navbar -->
   <header class="navbar">
-<div class="logo">
-  <a href="index.html" class="logo-link">
-    <img src="images/3_res_willyflower_blue.png" alt="logo" class="logo-spin">
-    <span class="logo-text">Take me home!</span>
-  </a>
-</div>
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/3_res_willyflower_blue.png" alt="logo" class="logo-spin">
+        <span class="logo-text">Take me home!</span>
+      </a>
     </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -48,31 +55,29 @@
   <section class="about">
     <p>
       My name is Aiden Williams and I am a registered Student RGD graphic designer.
-<p>
+    </p>
     <a href="about.html" class="btn">About Me</a>
   </section>
 
-<!-- Featured Work -->
-<section class="featured-work">
-  <h2>Featured Work</h2>
-  <div class="tiles">
-    <div class="tile">
-      <img src="images/Un.Ent. Summer Send Off Poster Mock Up.png" alt="Project 1">
-      <h3>Untitled Entertainment</h3>
+  <!-- Featured Work -->
+  <section class="featured-work">
+    <h2>Featured Work</h2>
+    <div class="tiles">
+      <div class="tile">
+        <img src="images/Un.Ent. Summer Send Off Poster Mock Up.png" alt="Project 1">
+        <h3>Untitled Entertainment</h3>
+      </div>
+      <div class="tile">
+        <img src="images/2005 Background.png" alt="Project 2">
+        <h3>Chris G, 2005</h3>
+      </div>
+      <div class="tile">
+        <img src="images/COLLEGE-SCREEN PRINT.jpeg" alt="Project 3">
+        <h3>College Work</h3>
+      </div>
+      <!-- Add more tiles as needed -->
     </div>
-    <div class="tile">
-      <img src="images/2005 Background.png" alt="Project 2">
-      <h3>Chris G, 2005</h3>
-    </div>
-    <div class="tile">
-      <img src="images/COLLEGE-SCREEN PRINT.jpeg" alt="Project 3">
-      <h3>College Work</h3>
-    </div>
-    <!-- Add more tiles as needed -->
-  </div>
-</section>
-
-
+  </section>
 
   <!-- Contact Section -->
   <section class="contact">
@@ -82,12 +87,22 @@
 
   <footer>
     <p>Aiden Williams is a Graphic Designer based in Niagara Falls, Ontario.</p>
-          <p>Website designed and coded by Aiden Williams</p>
-    <p>Email: <a href="mailto:aidenwilliams7@gmail.com">aidenwilliams7@gmail.com</p>
+    <p>Website designed and coded by Aiden Williams</p>
+    <p>Email: <a href="mailto:aidenwilliams7@gmail.com">aidenwilliams7@gmail.com</a></p>
   </footer>
 
-<div class="custom-cursor"></div>
+  <div class="custom-cursor"></div>
 
+  <!-- Script for Hamburger -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.navbar ul');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('show');
+    });
+  </script>
   
 </body>
 </html>

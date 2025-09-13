@@ -1,12 +1,26 @@
+/* --------------------------- */
 /* Global Styles */
+/* --------------------------- */
 body {
   margin: 0;
   font-family: 'Roboto Mono', monospace;
   background: #f5f5f5;
-  color: #0014ff; /* site-wide text color */
+  color: #0014FF;
+  line-height: 1.6;
 }
 
-/*COPY THIS TEXT FOR CONSISTENT NAVBAR*/
+a {
+  color: #0014FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------- */
+/* Navbar (COPY THIS FOR CONSISTENCY) */
+/* --------------------------- */
 .navbar {
   display: flex;
   justify-content: space-between; /* logo left, links right */
@@ -47,12 +61,10 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Slide out on hover */
 .logo-link:hover .logo-text {
   opacity: 1;
   transform: translateX(0);
 }
-
 
 .navbar ul {
   display: flex;
@@ -64,17 +76,70 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #0014ff;
+  color: #0014FF;
   font-weight: 500;
 }
 
 .navbar a.active {
   font-weight: 700;
-  text-decoration: none;
 }
-/*STOP COPY HERE*/
 
-/* Hero */
+/* --------------------------- */
+/* Hamburger Menu (Mobile) */
+/* --------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #0014FF;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #f0f0f0;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    display: none;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* --------------------------- */
+/* Hero Section */
+/* --------------------------- */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
@@ -85,7 +150,6 @@ body {
   font-weight: 700;
 }
 
-/* Instagram icon */
 .insta {
   margin-top: 1rem;
 }
@@ -94,7 +158,9 @@ body {
   width: 30px;
 }
 
-/* Flower Animations */
+/* --------------------------- */
+/* Flower / Logo Animations */
+/* --------------------------- */
 .logo-spin, .flower-spin {
   animation: spin 30s linear infinite;
   height: 200px;
@@ -111,7 +177,9 @@ body {
   50% { transform: translateY(30px); }
 }
 
-/* About Page */
+/* --------------------------- */
+/* About / Page Styles */
+/* --------------------------- */
 .about, .about-page, .page {
   max-width: 800px;
   margin: 5rem auto;
@@ -127,14 +195,14 @@ body {
 .about p, .about-page p, .page p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #0014ff;
+  color: #0014FF;
 }
 
 .about-page blockquote {
   margin-top: 3rem;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #0014ff;
+  color: #0014FF;
   font-style: italic;
 }
 
@@ -145,24 +213,28 @@ body {
   font-size: 1rem;
 }
 
+/* --------------------------- */
 /* Buttons */
+/* --------------------------- */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 2px solid #0014ff;
+  border: 2px solid #0014FF;
   border-radius: 25px;
   text-decoration: none;
-  color: #0014ff;
+  color: #0014FF;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #0014ff;
+  background: #0014FF;
   color: white;
 }
 
-/* Featured Work */
+/* --------------------------- */
+/* Featured Work / Tiles */
+/* --------------------------- */
 .featured, .featured-work {
   text-align: center;
   padding: 4rem 2rem;
@@ -175,7 +247,7 @@ body {
 .featured-work h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #0014ff;
+  color: #0014FF;
 }
 
 .tiles {
@@ -188,14 +260,14 @@ body {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
 
 .tile:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .tile img {
@@ -207,26 +279,29 @@ body {
 .tile h3 {
   padding: 1rem;
   font-size: 1.2rem;
-  color: #0014ff;
+  color: #0014FF;
   font-weight: 600;
 }
 
-/* Contact */
+/* --------------------------- */
+/* Contact & Footer */
+/* --------------------------- */
 .contact {
   text-align: left;
   padding: 2rem 1rem;
 }
 
-/* Footer */
 footer {
   text-align: left;
   padding: 1rem;
   font-size: 0.9rem;
   background: #f5f5f5;
-  color: #0014ff;
+  color: #0014FF;
 }
 
-/* Global cursor with centered hotspot */
+/* --------------------------- */
+/* Global Cursor */
+/* --------------------------- */
 body, a, button, .tile, input, textarea {
   cursor: url('images/cursor-click.png') 16 16, auto;
 }
