@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work - Aiden Williams</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background: #fff;
+      color: #0014FF;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      color: #0014FF;
+    }
+
+    a {
+      color: #0014FF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      margin-left: 10px;
+      color: #0014FF;
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .logo-link:hover .logo-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #0014ff;
+      font-weight: 500;
+    }
+
+    .navbar a.active {
+      font-weight: 700;
+    }
+
+    /* Work Section */
+    .work-page {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px 60px 20px;
+    }
+
+    .work-page h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      grid-auto-rows: 300px;
+    }
+
+    .work-tile {
+      background: #fff;
+      border: 2px solid #0014FF;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .work-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex: 1;
+      display: block;
+    }
+
+    .work-tile:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Cover overlay (default) */
+/* Cover overlay (default) */
+.work-tile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+/* Slide upward on hover */
+.work-tile:hover::before {
+  transform: translateY(-100%);
+}
+
+/* Assign unique cover images */
+.cover1::before { background: url("images/cover1.jpg") center/cover no-repeat; }
+.cover2::before { background: url("images/cover2.jpg") center/cover no-repeat; }
+.cover3::before { background: url("images/cover3.jpg") center/cover no-repeat; }
+.cover4::before { background: url("images/cover4.jpg") center/cover no-repeat; }
+.cover5::before { background: url("images/cover5.jpg") center/cover no-repeat; }
+
+    /* Assign unique cover images */
+    .cover1::before { background: url("images/cover1.jpg") center/cover no-repeat; }
+    .cover2::before { background: url("images/cover2.jpg") center/cover no-repeat; }
+    .cover3::before { background: url("images/cover3.jpg") center/cover no-repeat; }
+    .cover4::before { background: url("images/cover4.jpg") center/cover no-repeat; }
+    .cover5::before { background: url("images/cover5.jpg") center/cover no-repeat; }
+
+    /* White bar at bottom (hidden until hover) */
+    .tile-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border-top: 2px solid #0014FF;
+      padding: 12px 16px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      box-sizing: border-box;
+      z-index: 3;
+    }
+
+    .work-tile:hover .tile-content {
+      transform: translateY(0);
+    }
+
+    .tile-content h3 {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+    }
+
+    .tile-content p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Asymmetry */
+    .wide {
+      grid-column: span 2;
+    }
+    .tall {
+      grid-row: span 2;
+    }
+
+    /* Flower Tile */
+    .flower-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: transparent;
+    }
+
+    .flower-tile img {
+      width: 350px;
+      height: auto;
+      animation: spin 12s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Contact */
+    .contact {
+      text-align: left;
+      padding: 2rem 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: left;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background: #f5f5f5;
+      color: #0014ff;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #0014ff;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #0014ff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0014ff;
+      color: white;
+    }
+
+    /* Cursor */
+    body, a, button, .tile, input, textarea {
+      cursor: url('images/cursor-click.png') 16 16, auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/3_res_willyflower_blue.png" alt="logo" class="logo-spin">
+        <span class="logo-text">Take me home!</span>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Work Section -->
+  <section class="work-page">
+    <h1>My Work</h1>
+    <div class="work-grid">
+
+      <a href="project1.html" class="work-tile wide cover1">
+        <img src="images/project1.jpg" alt="Project 1">
+        <div class="tile-content">
+          <h3>Unofficial Entertainment</h3>
+          <p>Poster design for an NYC nightclub.</p>
+        </div>
+      </a>
+
+      <a href="project2.html" class="work-tile cover2">
+        <img src="images/project2.jpg" alt="Project 2">
+        <div class="tile-content">
+          <h3>Chris G "2005"</h3>
+          <p>Album cover artwork blending photography and typography.</p>
+        </div>
+      </a>
+
+      <a href="project3.html" class="work-tile tall cover3">
+        <img src="images/project3.jpg" alt="Project 3">
+        <div class="tile-content">
+          <h3>Willy Hyperlegible</h3>
+          <p>Custom dyslexia-friendly typeface college assignment.</p>
+        </div>
+      </a>
+
+      <!-- Spinning Flower Filler -->
+      <div class="flower-tile">
+        <img src="images/Flower-logo-with-type.png" alt="Spinning Flower Logo">
+      </div>
+
+      <a href="project4.html" class="work-tile cover4">
+        <img src="images/project4.jpg" alt="Project 4">
+        <div class="tile-content">
+          <h3>Misc. College</h3>
+          <p>Some college assignments I've done in the past 3 years.</p>
+        </div>
+      </a>
+
+      <a href="project5.html" class="work-tile wide cover5">
+        <img src="images/project5.jpg" alt="Project 5">
+        <div class="tile-content">
+          <h3>Project Five</h3>
+          <p>Branding system for a coffee shop including logo, menu, and packaging.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Let’s Talk</h2>
+    <a href="mailto:aidenwilliams7@gmail.com" class="btn">Contact</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Aiden Williams is a Graphic Designer based in Niagara Falls, Ontario.</p>
+    <p>Email: <a href="mailto:aidenwilliams7@gmail.com">aidenwilliams7@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>

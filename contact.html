@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+/* Contact Page CSS */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: #fff;
+    color: #0014FF;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    border: 2px solid #0014FF;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #0014FF;
+    border-radius: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    background: #fff;
+    color: #0014FF;
+    outline: none;
+    transition: border 0.3s ease, background 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #0014FF;
+    opacity: 0.6;
+}
+
+button {
+    padding: 12px;
+    background: #0014FF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #ffffff;          /* background turns white */
+    color: #0014FF;               /* text turns blue */
+    border: 2px solid #0014FF;    /* blue border appears */
+}
+/*COPY THIS TEXT FOR CONSISTENT NAVBAR*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.logo-text {
+  margin-left: 10px;
+  color: #0014FF;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Slide out on hover */
+.logo-link:hover .logo-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0014ff;
+  font-weight: 500;
+}
+
+.navbar a.active {
+  font-weight: 700;
+  text-decoration: none;
+}
+/*STOP COPY HERE*/
+
+/* Global cursor with centered hotspot */
+body, a, button, .tile, input, textarea {
+  cursor: url('images/cursor-click.png') 16 16, auto;
+}
+/* Contact */
+.contact {
+  text-align: left;
+  padding: 2rem 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #f5f5f5;
+  color: #0014ff;
+}
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #0014ff;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #0014ff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0014ff;
+  color: white;
+}
+
+
+
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+<div class="logo">
+  <a href="index.html" class="logo-link">
+    <img src="images/3_res_willyflower_blue.png" alt="logo" class="logo-spin">
+    <span class="logo-text">Take me home!</span>
+  </a>
+</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<div class="contact-container">
+  <h1>Contact Me</h1>
+  <form action="mailto:aidenwilliams17@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" placeholder="Your Message" rows="6" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Aiden Williams is a Graphic Designer based in Niagara Falls, Ontario.</p>
+    <p>Email: <a href="mailto:aidenwilliams7@gmail.com">aidenwilliams7@gmail.com</p>
+  </footer>
+
+
+<div class="custom-cursor"></div>
+
+
+</body>
+</html>

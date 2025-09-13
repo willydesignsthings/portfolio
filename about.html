@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Aiden Williams</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    /* Base Styles */
+    body {
+        font-family: 'Roboto Mono', monospace;
+        background: #fff;
+        color: #0014FF;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 700;
+        color: #0014FF;
+    }
+
+    p {
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    a {
+        color: #0014FF;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /*COPY THIS TEXT FOR CONSISTENT NAVBAR*/
+    .navbar {
+      display: flex;
+      justify-content: space-between; /* logo left, links right */
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+      width: auto;
+    }
+.logo-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.logo-text {
+  margin-left: 10px;
+  color: #0014FF;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Slide out on hover */
+.logo-link:hover .logo-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #0014ff;
+      font-weight: 500;
+    }
+
+    .navbar a.active {
+      font-weight: 700;
+      text-decoration: none;
+    }
+    /*STOP COPY HERE*/
+
+    /* About Section */
+    .about-page {
+        max-width: 700px;
+        margin: 60px auto 0 auto; /* top margin to avoid navbar overlap */
+        padding: 0 20px 60px 20px; /* added 60px bottom padding */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-page h1 {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .about-page p {
+        font-size: 18px;
+        font-weight: 400;
+        color: #0014FF;
+    }
+
+    .about-page blockquote {
+        border-left: 2px solid #0014FF; /* thinner line */
+        padding-left: 16px;
+        font-style: italic;
+        color: #0014FF;
+        margin: 20px 0;
+        text-align: center; /* center text */
+        border-left: none; /* remove side line for centered look */
+        border-top: 2px solid #0014FF; 
+        border-bottom: 2px solid #0014FF; 
+        padding: 20px;
+    }
+
+    .about-page blockquote span {
+        display: block;
+        margin-top: 8px;
+        font-weight: 700;
+    }
+
+    /* Global cursor with centered hotspot */
+    body, a, button, .tile, input, textarea {
+      cursor: url('images/cursor-click.png') 16 16, auto;
+    }
+    /* Contact */
+.contact {
+  text-align: left;
+  padding: 2rem 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #f5f5f5;
+  color: #0014ff;
+}
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #0014ff;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #0014ff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0014ff;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <header class="navbar">
+<div class="logo">
+  <a href="index.html" class="logo-link">
+    <img src="images/3_res_willyflower_blue.png" alt="logo" class="logo-spin">
+    <span class="logo-text">Take me home!</span>
+  </a>
+</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-page">
+    <h1>About</h1>
+    <p>
+      I am a graphic designer from Niagara Falls, Canada. I have been a creative person all my life but when I was 16 years old I got my hands on a Photoshop subscription and never turned back. I am now proficient in Photoshop, Illustrator, and InDesign and Figma. This website was designed and coded by yours truly.
+    </p>
+    <p>
+      My dream is to design an album cover, but I also love logo design, editorial design, and clothing design.
+    </p>
+
+    <blockquote>
+      <h2>“It's through mistakes that you actually can grow. You have to get bad in order to get good.”</h2>
+      <span><h2>- Paula Scher</h2></span>
+    </blockquote>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Let’s Talk</h2>
+    <a href="mailto:aidenwilliams7@gmail.com" class="btn">Contact</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Aiden Williams is a Graphic Designer based in Niagara Falls, Ontario.</p>
+    <p>Email: <a href="mailto:aidenwilliams7@gmail.com">aidenwilliams7@gmail.com</p>
+  </footer>
+
+
+  <div class="custom-cursor"></div>
+
+</body>
+</html>

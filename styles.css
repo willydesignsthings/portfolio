@@ -1,0 +1,233 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: #f5f5f5;
+  color: #0014ff; /* site-wide text color */
+}
+
+/*COPY THIS TEXT FOR CONSISTENT NAVBAR*/
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar .logo img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.logo-text {
+  margin-left: 10px;
+  color: #0014FF;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Slide out on hover */
+.logo-link:hover .logo-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0014ff;
+  font-weight: 500;
+}
+
+.navbar a.active {
+  font-weight: 700;
+  text-decoration: none;
+}
+/*STOP COPY HERE*/
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Instagram icon */
+.insta {
+  margin-top: 1rem;
+}
+
+.insta img {
+  width: 30px;
+}
+
+/* Flower Animations */
+.logo-spin, .flower-spin {
+  animation: spin 30s linear infinite;
+  height: 200px;
+  width: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+}
+
+/* About Page */
+.about, .about-page, .page {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.about h1, .about-page h1, .page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.about p, .about-page p, .page p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #0014ff;
+}
+
+.about-page blockquote {
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0014ff;
+  font-style: italic;
+}
+
+.about-page blockquote span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #0014ff;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #0014ff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0014ff;
+  color: white;
+}
+
+/* Featured Work */
+.featured, .featured-work {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.featured-work {
+  background: #f9f9f9;
+}
+
+.featured-work h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #0014ff;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tile {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tile h3 {
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #0014ff;
+  font-weight: 600;
+}
+
+/* Contact */
+.contact {
+  text-align: left;
+  padding: 2rem 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #f5f5f5;
+  color: #0014ff;
+}
+
+/* Global cursor with centered hotspot */
+body, a, button, .tile, input, textarea {
+  cursor: url('images/cursor-click.png') 16 16, auto;
+}
+
